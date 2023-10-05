@@ -1,5 +1,4 @@
 import 'package:ecommerce/static/all_color.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -21,15 +20,23 @@ class CostomTextField extends StatelessWidget {
 
   TextEditingController controller;
 
+  // ignore: prefer_typing_uninitialized_variables
   var validator;
 
   String? errortext;
+  // ignore: prefer_typing_uninitialized_variables
   var prefixIcon;
+  // ignore: prefer_typing_uninitialized_variables
   var hintText;
+  // ignore: prefer_typing_uninitialized_variables
   var suffixIcon;
+  // ignore: prefer_typing_uninitialized_variables
   var icon;
+  // ignore: prefer_typing_uninitialized_variables
   var onChanged;
+  // ignore: prefer_typing_uninitialized_variables
   var counterText;
+  // ignore: prefer_typing_uninitialized_variables
   var keyboardType;
   int? maxLength;
 
@@ -46,21 +53,21 @@ class CostomTextField extends StatelessWidget {
       
         prefixIcon: prefixIcon,
         hintText: hintText,
-        hintStyle: TextStyle(color: AllColor.blackColor),
+        hintStyle: const TextStyle(color: AllColor.blackColor),
         suffixIcon: suffixIcon,
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
           borderSide: BorderSide(color: AllColor.blackColor, width: 1),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
           borderSide: BorderSide(color: AllColor.blackColor, width: 1),
         ),
-        errorBorder: OutlineInputBorder(
+        errorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
           borderSide: BorderSide(color: AllColor.blackColor, width: 1),
         ),
-        focusedErrorBorder: OutlineInputBorder(
+        focusedErrorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
           borderSide: BorderSide(color: AllColor.blackColor, width: 1),
         ),

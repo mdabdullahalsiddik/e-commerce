@@ -21,13 +21,14 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
     TextEditingController pin4Controller = TextEditingController();
     return Scaffold(
       backgroundColor: AllColor.whiteColor,
-      body: Container(
+      body: SizedBox(
+         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AllText.pinText,
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
@@ -38,6 +39,7 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
                   width: 50,
                   child: CostomTextField(
                     validator: true,
+                    // ignore: non_constant_identifier_names
                     onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     controller: pin1Controller,
@@ -47,6 +49,7 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                    // ignore: non_constant_identifier_names
                     onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -57,6 +60,7 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                    // ignore: non_constant_identifier_names
                     onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -67,6 +71,7 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                    // ignore: non_constant_identifier_names
                     onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -75,7 +80,7 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Column(
@@ -87,10 +92,10 @@ class _PaymentPinPageState extends State<PaymentPinPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => const LoginPage(),
                         ));
                   },
-                  text: Text("Enter"),
+                  text: const Text("Enter"),
                 ),
               ],
             )

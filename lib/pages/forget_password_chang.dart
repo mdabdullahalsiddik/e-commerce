@@ -21,14 +21,15 @@ class _ForgetPasswordChamgPageState extends State<ForgetPasswordChamgPage> {
     TextEditingController confamPasswordController = TextEditingController();
     return Scaffold(
       backgroundColor: AllColor.whiteColor,
-      body: Container(
+      body: SizedBox(
+         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AllIcon.logoIcon,
             AllText.newPasswordText,
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Padding(
@@ -62,10 +63,10 @@ class _ForgetPasswordChamgPageState extends State<ForgetPasswordChamgPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => const LoginPage(),
                         ));
                   },
-                  text: Text("Save"),
+                  text: const Text("Save"),
                 ),
               ],
             )

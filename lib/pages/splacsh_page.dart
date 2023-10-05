@@ -12,10 +12,10 @@ class SplacshPage extends StatefulWidget {
 
 class _SplacshPageState extends State<SplacshPage> {
   Future welcome() async {
-    Future.delayed(Duration(seconds: 5)).then((value) => Navigator.push(
+    Future.delayed(const Duration(seconds: 5)).then((value) => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => SplachSliderPage(),
+          builder: (context) => const SplachSliderPage(),
         )));
   }
 
@@ -28,7 +28,8 @@ class _SplacshPageState extends State<SplacshPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
+         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

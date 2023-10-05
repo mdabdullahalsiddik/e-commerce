@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AllColor {
-  static final whiteColor = Colors.white;
-  static final blackColor = Colors.black;
-  static final greyColor = Colors.grey;
-  static final themeColor = Colors.cyan;
-  static final yellowColor = Color.fromARGB(255, 240, 178, 23);
+  static const whiteColor = Colors.white;
+  static const blackColor = Colors.black;
+  static const greyColor = Colors.grey;
+  static const themeColor = Colors.cyan;
+  static const yellowColor = Color.fromARGB(255, 240, 178, 23);
 }

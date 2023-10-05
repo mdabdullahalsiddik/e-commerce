@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CostomButton extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var onPressed;
+  // ignore: prefer_typing_uninitialized_variables
   var text;
   CostomButton({
     super.key,
