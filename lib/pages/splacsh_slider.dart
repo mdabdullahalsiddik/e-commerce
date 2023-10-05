@@ -12,7 +12,7 @@ class SplachSliderPage extends StatefulWidget {
 }
 
 class _SplachSliderPageState extends State<SplachSliderPage> {
-  PageController _pageController = PageController();
+  PageController pageController = PageController();
   List pageData = [
     {
       "title": "Choose Product",
@@ -43,7 +43,7 @@ class _SplachSliderPageState extends State<SplachSliderPage> {
       backgroundColor: AllColor.whiteColor,
       appBar: AppBar(
           elevation: 0,
-          iconTheme: IconThemeData(color: AllColor.whiteColor),
+          iconTheme: const IconThemeData(color: AllColor.whiteColor),
           backgroundColor: AllColor.whiteColor,
           actions: [
             TextButton(
@@ -51,16 +51,16 @@ class _SplachSliderPageState extends State<SplachSliderPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginPage(),
+                        builder: (context) => const LoginPage(),
                       ));
                 },
-                child: (crentPage != 2) ? AllText.skipText : SizedBox())
+                child: (crentPage != 2) ? AllText.skipText : const SizedBox())
           ]),
       body: Stack(
         children: [
           PageView.builder(
             onPageChanged: onPageChanged,
-            controller: _pageController,
+            controller: pageController,
             scrollDirection: Axis.horizontal,
             itemCount: pageData.length,
             itemBuilder: (context, index) {
@@ -70,14 +70,14 @@ class _SplachSliderPageState extends State<SplachSliderPage> {
                   Image.asset(pageData[index]["image"].toString()),
                   Text(
                     pageData[index]["title"],
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: AllColor.themeColor,
                         fontSize: 40,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     pageData[index]["description"],
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               );
@@ -93,10 +93,10 @@ class _SplachSliderPageState extends State<SplachSliderPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List<Widget>.generate(pageData.length, (index) {
                     return AnimatedContainer(
-                      duration: Duration(microseconds: 200),
+                      duration: const Duration(microseconds: 200),
                       height: 10,
                       width: 10,
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 5,
                       ),
                       decoration: BoxDecoration(
@@ -115,18 +115,18 @@ class _SplachSliderPageState extends State<SplachSliderPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              (crentPage == pageData.length - 1)
+              (crentPage == 2)
                   ? CostomButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(),
+                              builder: (context) => const LoginPage(),
                             ));
                       },
-                      text: Text("Start"),
+                      text: const Text("Start"),
                     )
-                  : SizedBox()
+                  : const SizedBox()
             ],
           )
         ],

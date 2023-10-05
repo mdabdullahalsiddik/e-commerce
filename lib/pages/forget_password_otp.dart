@@ -22,14 +22,15 @@ class _OtpPageState extends State<OtpPage> {
     TextEditingController otp4Controller = TextEditingController();
     return Scaffold(
       backgroundColor: AllColor.whiteColor,
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
+         height: MediaQuery.of(context).size.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AllIcon.logoIcon,
             AllText.otpText,
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
@@ -39,6 +40,7 @@ class _OtpPageState extends State<OtpPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                     // ignore: non_constant_identifier_names
                      onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -49,6 +51,7 @@ class _OtpPageState extends State<OtpPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                     // ignore: non_constant_identifier_names
                      onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -59,6 +62,7 @@ class _OtpPageState extends State<OtpPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                     // ignore: non_constant_identifier_names
                      onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -69,6 +73,7 @@ class _OtpPageState extends State<OtpPage> {
                   height: 50,
                   width: 50,
                   child: CostomTextField(
+                     // ignore: non_constant_identifier_names
                      onChanged: (Value){},
                     keyboardType: TextInputType.number,
                     validator: true,
@@ -77,10 +82,10 @@ class _OtpPageState extends State<OtpPage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Enter your code? "),
@@ -94,7 +99,7 @@ class _OtpPageState extends State<OtpPage> {
                 ),
               ],
             ),
-            TextButton(onPressed: () {}, child: Text("Don't have a code?")),
+            TextButton(onPressed: () {}, child: const Text("Don't have a code?")),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -104,10 +109,10 @@ class _OtpPageState extends State<OtpPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ForgetPasswordChamgPage(),
+                          builder: (context) => const ForgetPasswordChamgPage(),
                         ));
                   },
-                  text: Text("Enter"),
+                  text: const Text("Enter"),
                 ),
               ],
             )

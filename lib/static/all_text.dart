@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AllText {
   static final splacshText = RichText(
-      text: TextSpan(
+      text: const TextSpan(
           text: "Shop",
           style: TextStyle(
               color: AllColor.themeColor,
@@ -19,37 +19,38 @@ class AllText {
             ))
       ]));
 
-  static final skipText = Text(
+  static const skipText = Text(
     "Skip",
     style: TextStyle(color: AllColor.yellowColor, fontWeight: FontWeight.bold),
   );
-  static final LoginAccText = Text(
+  // ignore: constant_identifier_names
+  static const loginAccText = Text(
     "Loing  Your Account",
     style: TextStyle(
         color: AllColor.blackColor, fontSize: 30, fontWeight: FontWeight.bold),
   );
-  static final LoginWithText = Text(
+  static const loginWithText = Text(
     "Loing  With",
     style: TextStyle(
         color: AllColor.blackColor, fontSize: 30, fontWeight: FontWeight.bold),
   );
-  static final singupAccText = Text(
+  static const singupAccText = Text(
     "Create Your Account",
     style: TextStyle(
         color: AllColor.blackColor, fontSize: 30, fontWeight: FontWeight.bold),
   );
-   static final otpText = Text(
+   static const otpText = Text(
     "Enter OTP",
     style: TextStyle(
         color: AllColor.blackColor, fontSize: 30, fontWeight: FontWeight.bold),
   );
 
-   static final newPasswordText = Text(
+   static const newPasswordText = Text(
     "Set New Password",
     style: TextStyle(
         color: AllColor.blackColor, fontSize: 30, fontWeight: FontWeight.bold),
   );
-   static final pinText = Text(
+   static const pinText = Text(
     "Enter Card Pin",
     style: TextStyle(
         color: AllColor.blackColor, fontSize: 30, fontWeight: FontWeight.bold),

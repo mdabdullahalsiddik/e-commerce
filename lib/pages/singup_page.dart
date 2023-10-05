@@ -28,15 +28,16 @@ class _SingUpPageState extends State<SingUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AllColor.whiteColor,
-      body: SingleChildScrollView(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AllIcon.logoIcon,
               AllText.singupAccText,
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Form(
@@ -47,7 +48,8 @@ class _SingUpPageState extends State<SingUpPage> {
                       padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 20),
                       child: CostomTextField(
-                           onChanged: (Value){},
+                          // ignore: non_constant_identifier_names
+                          onChanged: (Value) {},
                           validator: true,
                           controller: nameController,
                           errortext: "Enter Your Name",
@@ -57,7 +59,8 @@ class _SingUpPageState extends State<SingUpPage> {
                       padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 20),
                       child: CostomTextField(
-                           onChanged: (Value){},
+                          // ignore: non_constant_identifier_names
+                          onChanged: (Value) {},
                           validator: true,
                           controller: addresController,
                           errortext: "Enter Your Addres",
@@ -67,7 +70,8 @@ class _SingUpPageState extends State<SingUpPage> {
                       padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 20),
                       child: CostomTextField(
-                           onChanged: (Value){},
+                          // ignore: non_constant_identifier_names
+                          onChanged: (Value) {},
                           validator: true,
                           controller: passwordController,
                           errortext: "Enter Your PostCode",
@@ -77,8 +81,8 @@ class _SingUpPageState extends State<SingUpPage> {
                       padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 20),
                       child: CostomTextField(
-                         onChanged: (Value){},
-                 
+                          // ignore: non_constant_identifier_names
+                          onChanged: (Value) {},
                           validator: true,
                           controller: phoneController,
                           errortext: "Enter Your Phone",
@@ -88,7 +92,8 @@ class _SingUpPageState extends State<SingUpPage> {
                       padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 20),
                       child: CostomTextField(
-                           onChanged: (Value){},
+                          // ignore: non_constant_identifier_names
+                          onChanged: (Value) {},
                           validator: true,
                           controller: mailController,
                           errortext: "Enter Your Email",
@@ -157,19 +162,19 @@ class _SingUpPageState extends State<SingUpPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(),
+                              builder: (context) => const LoginPage(),
                             ));
                       }
                     },
-                    text: Text("Save"),
+                    text: const Text("Save"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "You are  registration?",
                         style: TextStyle(
                           color: AllColor.blackColor,
@@ -182,10 +187,10 @@ class _SingUpPageState extends State<SingUpPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => LoginPage(),
+                                  builder: (context) => const LoginPage(),
                                 ));
                           },
-                          child: Text(
+                          child:  const Text(
                             "Login",
                             style: TextStyle(
                               color: AllColor.themeColor,

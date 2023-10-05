@@ -1,5 +1,5 @@
 import 'package:ecommerce/pages/forget_password_otp.dart';
-import 'package:ecommerce/pages/payment_pin.dart';
+import 'package:ecommerce/pages/home_page.dart';
 import 'package:ecommerce/pages/singup_page.dart';
 import 'package:ecommerce/static/all_color.dart';
 import 'package:ecommerce/static/all_icon.dart';
@@ -23,14 +23,15 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AllColor.whiteColor,
-      body: Container(
+      body: SizedBox(
+         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AllIcon.logoIcon,
-            AllText.LoginAccText,
-            SizedBox(
+            AllText.loginAccText,
+            const SizedBox(
               height: 50,
             ),
             Column(
@@ -39,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding:
                       const EdgeInsets.only(left: 20, right: 20, bottom: 20),
                   child: CostomTextField(
+                      // ignore: non_constant_identifier_names
                       onChanged: (Value) {},
                       validator: true,
                       controller: userController,
@@ -74,10 +76,10 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => OtpPage(),
+                                  builder: (context) => const OtpPage(),
                                 ));
                           },
-                          child: Text("Forget Password?"))),
+                          child: const Text("Forget Password?"))),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -88,38 +90,38 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PaymentPinPage(),
+                              builder: (context) => const HomePage(),
                             ));
                       },
-                      text: Text("Login"),
+                      text: const Text("Login"),
                     ),
                   ],
                 ),
-                AllText.LoginWithText,
+                AllText.loginWithText,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.g_mobiledata_outlined,
                           size: 60,
                         )),
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.apple_sharp,
                           size: 50,
                         )),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "You are not registration?",
                       style: TextStyle(
                         color: AllColor.blackColor,
@@ -132,10 +134,10 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => SingUpPage(),
+                                builder: (context) => const SingUpPage(),
                               ));
                         },
-                        child: Text(
+                        child: const Text(
                           "SingUp",
                           style: TextStyle(
                             color: AllColor.themeColor,
