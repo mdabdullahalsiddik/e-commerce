@@ -7,15 +7,16 @@ class CostomTextField extends StatelessWidget {
     super.key,
     required this.controller,
     this.validator,
-     this.errortext,
+    this.errortext,
     this.prefixIcon,
-     this.hintText,
+    this.hintText,
     this.suffixIcon,
     this.icon,
-   required this.onChanged,
+    required this.onChanged,
     this.maxLength,
     this.counterText,
     this.keyboardType,
+    this.counter,
   });
 
   TextEditingController controller;
@@ -38,46 +39,56 @@ class CostomTextField extends StatelessWidget {
   var counterText;
   // ignore: prefer_typing_uninitialized_variables
   var keyboardType;
+  // ignore: prefer_typing_uninitialized_variables
+  var counter;
+
   int? maxLength;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      maxLength: maxLength,
-      onChanged: onChanged,
-      controller: controller,
-      keyboardType:keyboardType ,
-      obscureText: !validator,
-      decoration: InputDecoration(
-        counter: counterText,
-      
-        prefixIcon: prefixIcon,
-        hintText: hintText,
-        hintStyle: const TextStyle(color: AllColor.blackColor),
-        suffixIcon: suffixIcon,
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(color: AllColor.blackColor, width: 1),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(color: AllColor.blackColor, width: 1),
-        ),
-        errorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(color: AllColor.blackColor, width: 1),
-        ),
-        focusedErrorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(color: AllColor.blackColor, width: 1),
-        ),
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 20,
+        right: 20,
+        bottom: 5,
       ),
-      validator: (value) {
-        if (value!.isEmpty) {
-          return errortext;
-        }
-        return null;
-      },
+      child: TextFormField(
+        maxLength: maxLength,
+        onChanged: onChanged,
+        controller: controller,
+        keyboardType: keyboardType,
+        obscureText: !validator,
+        decoration: InputDecoration(
+          counter: counter,
+          counterText: counterText,
+          prefixIcon: prefixIcon,
+          hintText: hintText,
+          hintStyle: const TextStyle(color: AllColor.blackColor),
+          suffixIcon: suffixIcon,
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderSide: BorderSide(color: AllColor.blackColor, width: 1),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderSide: BorderSide(color: AllColor.blackColor, width: 1),
+          ),
+          errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderSide: BorderSide(color: AllColor.blackColor, width: 1),
+          ),
+          focusedErrorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderSide: BorderSide(color: AllColor.blackColor, width: 1),
+          ),
+        ),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return errortext;
+          }
+          return null;
+        },
+      ),
     );
   }
 }

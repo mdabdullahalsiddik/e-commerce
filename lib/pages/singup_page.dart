@@ -1,3 +1,4 @@
+import 'package:ecommerce/funcition/firebase_controller.dart';
 import 'package:ecommerce/pages/login_page.dart';
 import 'package:ecommerce/static/all_color.dart';
 import 'package:ecommerce/static/all_icon.dart';
@@ -5,6 +6,7 @@ import 'package:ecommerce/static/all_text.dart';
 import 'package:ecommerce/widgets/costom_button.dart';
 import 'package:ecommerce/widgets/costom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class SingUpPage extends StatefulWidget {
   const SingUpPage({super.key});
@@ -35,120 +37,105 @@ class _SingUpPageState extends State<SingUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 20,
+              ),
               AllIcon.logoIcon,
               AllText.singupAccText,
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
               Form(
                 key: formkey,
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: CostomTextField(
-                          // ignore: non_constant_identifier_names
-                          onChanged: (Value) {},
-                          validator: true,
-                          controller: nameController,
-                          errortext: "Enter Your Name",
-                          hintText: "Md. Abdullah Al Siddik"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: CostomTextField(
-                          // ignore: non_constant_identifier_names
-                          onChanged: (Value) {},
-                          validator: true,
-                          controller: addresController,
-                          errortext: "Enter Your Addres",
-                          hintText: "Lalbug , Sadar , Dinajpur"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: CostomTextField(
-                          // ignore: non_constant_identifier_names
-                          onChanged: (Value) {},
-                          validator: true,
-                          controller: passwordController,
-                          errortext: "Enter Your PostCode",
-                          hintText: "5200"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: CostomTextField(
-                          // ignore: non_constant_identifier_names
-                          onChanged: (Value) {},
-                          validator: true,
-                          controller: phoneController,
-                          errortext: "Enter Your Phone",
-                          hintText: "8801737374083"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: CostomTextField(
-                          // ignore: non_constant_identifier_names
-                          onChanged: (Value) {},
-                          validator: true,
-                          controller: mailController,
-                          errortext: "Enter Your Email",
-                          hintText: "flutter@gmail.com"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: CostomTextField(
-                        validator: passwordValidator,
-                        onChanged: (value) {
-                          setState(() {});
-                        },
-                        suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                passwordValidator = !passwordValidator;
-                              });
-                            },
-                            icon: Icon(
-                              confamPasswordValidator
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: AllColor.themeColor,
-                            )),
-                        controller: passwordController,
-                        errortext: "Enter  Password",
-                        hintText: "Enter  Password",
-                      ),
-                    ),
-                    Padding(
-                        padding: const EdgeInsets.only(
-                            left: 20, right: 20, bottom: 20),
-                        child: CostomTextField(
-                          validator: passwordValidator,
-                          onChanged: (value) {
-                            setState(() {});
+                    CostomTextField(
+                        // ignore: non_constant_identifier_names
+                        onChanged: (Value) {},
+                        validator: true,
+                        counterText: "",
+                        controller: nameController,
+                        errortext: "Enter Your Name",
+                        hintText: "Md. Abdullah Al Siddik"),
+                    CostomTextField(
+                        // ignore: non_constant_identifier_names
+                        onChanged: (Value) {},
+                        validator: true,
+                        controller: addresController,
+                        counterText: "",
+                        errortext: "Enter Your Addres",
+                        hintText: "Enter Your Addres"),
+                    CostomTextField(
+                        // ignore: non_constant_identifier_names
+                        onChanged: (Value) {},
+                        validator: true,
+                        controller: postController,
+                        counterText: "",
+                        errortext: "Enter Your PostCode",
+                        hintText: "Enter Your PostCode"),
+                    CostomTextField(
+                        // ignore: non_constant_identifier_names
+                        onChanged: (Value) {},
+                        validator: true,
+                        controller: phoneController,
+                        counterText: "",
+                        errortext: "Enter Your Phone",
+                        hintText: "Enter Your Phone Number"),
+                    CostomTextField(
+                        // ignore: non_constant_identifier_names
+                        onChanged: (Value) {},
+                        validator: true,
+                        controller: mailController,
+                        counterText: "",
+                        errortext: "Enter Your Email",
+                        hintText: "Enter Your Email"),
+                    CostomTextField(
+                      validator: passwordValidator,
+                      onChanged: (value) {
+                        setState(() {});
+                      },
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              passwordValidator = !passwordValidator;
+                            });
                           },
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  confamPasswordValidator =
-                                      !confamPasswordValidator;
-                                });
-                              },
-                              icon: Icon(
-                                confamPasswordValidator
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                                color: AllColor.themeColor,
-                              )),
-                          controller: conPasswordController,
-                          errortext: "Enter  Confam Password",
-                          hintText: "Enter  Confam Password",
-                        )),
+                          icon: Icon(
+                            passwordValidator
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: AllColor.themeColor,
+                          )),
+                      controller: passwordController,
+                      counterText: "",
+                      maxLength: 8,
+                      errortext: "Enter  Password",
+                      hintText: "Enter  Password",
+                    ),
+                    CostomTextField(
+                      validator: confamPasswordValidator,
+                      onChanged: (value) {
+                        setState(() {});
+                      },
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              confamPasswordValidator =
+                                  !confamPasswordValidator;
+                            });
+                          },
+                          icon: Icon(
+                            confamPasswordValidator
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: AllColor.themeColor,
+                          )),
+                      controller: conPasswordController,
+                      counterText: "",
+                      maxLength: 8,
+                      errortext: "Enter  Confam Password",
+                      hintText: "Enter  Confam Password",
+                    ),
                   ],
                 ),
               ),
@@ -158,12 +145,55 @@ class _SingUpPageState extends State<SingUpPage> {
                 children: [
                   CostomButton(
                     onPressed: () {
-                      if (formkey.currentState!.validate()) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LoginPage(),
-                            ));
+                      if (passwordController.text.length == 8 &&
+                          conPasswordController.text.length == 8) {
+                        if (formkey.currentState!.validate()) {
+                          // if (nameController.text.isNotEmpty &&
+                          //     mailController.text.isNotEmpty &&
+                          //     addresController.text.isNotEmpty &&
+                          //     phoneController.text.isNotEmpty &&
+                          //     passwordController.text.isNotEmpty &&
+                          //     conPasswordController.text.isNotEmpty &&
+                          //     postController.text.isNotEmpty) {
+                          if (passwordController.text ==
+                              conPasswordController.text) {
+                            EasyLoading.show(status: 'loading...');
+                            setState(() async {
+                              await FirebaseData().sendData(
+                                nameController.text,
+                                addresController.text,
+                                passwordController.text,
+                                phoneController.text,
+                                mailController.text,
+                                postController.text,
+                              );
+
+                              EasyLoading.showSuccess('Great Success!');
+                              // ignore: use_build_context_synchronously
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const LoginPage(),
+                                  ));
+                            });
+                            //  }
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                    "Password and Confomepassword are not mach "),
+                                duration: Duration(seconds: 10),
+                              ),
+                            );
+                          }
+                        }
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Enter 8 Digit Password"),
+                            duration: Duration(seconds: 10),
+                          ),
+                        );
                       }
                     },
                     text: const Text("Save"),
@@ -190,7 +220,7 @@ class _SingUpPageState extends State<SingUpPage> {
                                   builder: (context) => const LoginPage(),
                                 ));
                           },
-                          child:  const Text(
+                          child: const Text(
                             "Login",
                             style: TextStyle(
                               color: AllColor.themeColor,
