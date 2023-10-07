@@ -1,3 +1,4 @@
+import 'package:ecommerce/static/all_color.dart';
 import 'package:flutter/material.dart';
 
 class CardPaymentPage extends StatefulWidget {
@@ -10,6 +11,8 @@ class CardPaymentPage extends StatefulWidget {
 class _CardPaymentPageState extends State<CardPaymentPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: AllColor.whiteColor,
+    );
   }
 }
